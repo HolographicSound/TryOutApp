@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.module.main">
+
+    <!-- debug -->
+    <!-- 在 Debug 模式下使用，最为独立的 App 工作，不考用虑壳工程影响 -->
+    <!-- 同步两个 AndroidManifest 内的组件 -->
+    <application
+        android:name=".debug.Application4Main"
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
