@@ -5,7 +5,8 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.0'
+        // localGradlePluginVersion 是 gradle.properties 中的数据
+        classpath "com.android.tools.build:gradle:$localGradlePluginVersion"
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
@@ -27,14 +28,26 @@ task clean(type: Delete) {
 }
 
 // Define versions in a single place
-// 申明全局变量，所有 Module 统一使用这些变量，便于统一
-// rootProject.ext.xxx
+// 申明全局变量，所有 Module 统一使用这些变量，便于统一。使用：rootProject.ext.xxx
+// update time : 2017.8.24
 ext {
+    // 软件版本控制
+    versionCode = 1
+    versionName = "1.0"
+
+    // 编译器版本
     compileSdkVersion = 25
     //localBuildToolsVersion 是 gradle.properties 中的数据
     buildToolsVersion = localBuildToolsVersion
+
+    // 软件支持的 Android 版本
     minSdkVersion = 16
     targetSdkVersion = 25
-    versionCode = 1
-    versionName = "1.0"
+
+    // Dependency library version (不用升级)
+    supportLibraryVersion = "25.3.1"
+
+    // Dependency library version (检查升级)
+    routerVersion = "1.2.2"
+    annotationProcessor = "1.1.7"
 }

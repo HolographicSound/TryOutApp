@@ -68,13 +68,6 @@ android {
             debuggable true
         }
     }
-	
-	// NDK 设置
-    externalNativeBuild {
-        cmake {
-            path "CMakeLists.txt"
-        }
-    }
 
     // 资源路径设置
     sourceSets {
@@ -85,11 +78,14 @@ android {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
+    // 引入 ActivityRouter 的 Annotation 处理器，将会在申明组件和使用 Url 的时候使用
+    annotationProcessor "com.github.mzule.activityrouter:compiler:$rootProject.annotationProcessor"
+
     if (isDebug.toBoolean()){
         compile project(':lib_common')
     }
     else {
         compile project(':module_main')
-        compile project(':module_news')
+        compile project(':module_view')
     }
 }

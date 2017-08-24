@@ -3,11 +3,22 @@
     package="org.module.main">
 
     <!-- release -->
-    <!-- 业务组件：不能设置 Application 和 Launch Activity，名称等属性，避免与壳工程重复 -->
-    <!--  可为组件内的Activity设置统一的主题，这里与壳工程一致-->
+    <!-- 不能设置 Application 、名称、图标等属性，避免与壳工程重复 -->
+    <!-- 业务组件：不能设置 Launch Activity-->
+    <!-- 可为组件内的Activity设置统一的主题，这里与壳工程一致-->
     <!-- 同步两个 AndroidManifest 内的组件 -->
     <application android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
+        <!--
+        如果是 Main 组件
+        声明 Launch Activity 作为整个程序的 Launch Activity
+        -->
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
