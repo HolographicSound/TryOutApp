@@ -1,13 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
     package="org.module.view">
 
     <!-- release -->
     <!-- 业务组件：不能设置 Application 和 Launch Activity，名称等属性，避免与壳工程重复 -->
-    <!--  可为组件内的Activity设置统一的主题，这里与壳工程一致-->
+    <!-- 可为组件内的Activity设置统一的主题，这里与壳工程一致 -->
     <!-- 同步两个 AndroidManifest 内的组件 -->
     <application android:theme="@style/AppTheme">
-        <activity android:name=".MainViewActivity" />
+        <activity
+            android:name=".MainViewActivity"
+            android:taskAffinity="@string/host_module_view_MainViewActivity">
+
+            <!-- 配置能接受 Scheme 方式启动的 Activity -->
+            <intent-filter>
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- 支持 JS 调起界面 -->
+                <!-- <category android:name="android.intent.category.BROWSABLE" /> -->
+
+
+                <!-- host：配置域名。相当于http://www.baidu.com中的www.baidu.com -->
+                <!-- scheme：配置接受协议。相当于http://www.baidu.com中的http或者https -->
+                <data
+                    android:host="@string/host_module_view_MainViewActivity"
+                    android:scheme="@string/app_scheme" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -12,20 +12,5 @@
         android:theme="@style/AppTheme">
 
         <!-- 程序的默认启动 Activity 在 module_main 里面 -->
-
-        <!-- 声明整个应用程序的路由协议 -->
-        <activity
-            android:name="com.github.mzule.activityrouter.router.RouterActivity"
-            android:theme="@android:style/Theme.NoDisplay">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-
-                <!-- TODO 改成自己的 scheme -->
-                <data android:scheme="@string/global_scheme" />
-            </intent-filter>
-        </activity>
     </application>
 </manifest>

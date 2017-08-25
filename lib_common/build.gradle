@@ -21,5 +21,6 @@ dependencies {
 //    compile "com.android.support:recyclerview-v7:$rootProject.supportLibraryVersion"
 
     // ActivityRouter：模块A启动模块B，使用“路由”解决模块组件之间的强依赖问题。https://github.com/mzule/ActivityRouter
-    compile "com.github.mzule.activityrouter:activityrouter:$rootProject.routerVersion"
+    // 使用 Uri 替代
+    // compile "com.github.mzule.activityrouter:activityrouter:$rootProject.routerVersion"
 }

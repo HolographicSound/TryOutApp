@@ -4,11 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
-import com.github.mzule.activityrouter.annotation.Router;
-import com.github.mzule.activityrouter.router.Routers;
+import org.module.main.util.UrlActionUtil;
 
 // 只有标记了才能使用路由导航
-@Router("main")
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     @Override
@@ -20,10 +18,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        // 不适用switch，主要是避免多个库之间出现资源冲突
+        // 不使用 switch ，主要是避免多个库之间出现资源冲突
         int viewId = v.getId();
         if (viewId == R.id.btn_jump_2_view) {
-            Routers.open(this, "module://view");
+            UrlActionUtil.jump2MainViewActivity(this);
         }
     }
 }

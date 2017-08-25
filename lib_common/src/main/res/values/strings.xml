@@ -1,3 +1,17 @@
 <resources>
+
     <string name="app_name">lib_common</string>
+
+    <!-- Uri 跳转 Activity 所有字段
+    scheme：http://www.baidu.com中的http或者https
+    host：域名。相当于http://www.baidu.com中的www.baidu.com
+    -->
+    <string name="app_scheme">module</string>
+    <string name="host_module_view_MainViewActivity">view.main</string>
+
+
+    <!--%n$ms：代表输出的是字符串，n代表是第几个参数，设置m的值可以在输出之前放置空格-->
+    <!--%n$md：代表输出的是整数，n代表是第几个参数，设置m的值可以在输出之前放置空格，也可以设为0md,表示共m个数,不足补0-->
+    <!--%n$.mf：代表输出的是浮点数，n代表是第几个参数，设置m的值可以控制小数位数，如m=2.2时，输出格式为00.00-->
+
 </resources>

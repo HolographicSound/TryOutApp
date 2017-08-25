@@ -1,12 +1,9 @@
 package org.module.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-
-import com.github.mzule.activityrouter.annotation.Router;
+import android.support.v7.app.AppCompatActivity;
 
 // 只有标记了才能使用路由导航
-@Router("view")
 public class MainViewActivity extends AppCompatActivity {
 
     @Override

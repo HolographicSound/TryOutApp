@@ -48,7 +48,5 @@ dependencies {
 
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
 
-    // 引入 ActivityRouter 的 Annotation 处理器，将会在申明组件和使用 Url 的时候使用
-    annotationProcessor "com.github.mzule.activityrouter:compiler:$rootProject.annotationProcessor"
     compile project(':lib_common')
 }
